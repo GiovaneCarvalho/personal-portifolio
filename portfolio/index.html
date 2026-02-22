@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovane Carvalho | Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script> <!-- For Icons -->
+</head>
+
+<body>
+    <script>
+        // Apply language from localStorage immediately to avoid flicker
+        if (localStorage.getItem('lang') === 'en') {
+            document.body.classList.add('lang-en');
+        } else {
+            document.body.classList.add('lang-pt');
+        }
+    </script>
+    <canvas id="bg-canvas"></canvas>
+    <div class="glow-effect"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">GC.</div>
+            <div class="tabs">
+                <button class="tab-btn active" data-target="home">
+                    <span class="pt">Perfil</span><span class="en">Profile</span>
+                </button>
+                <button class="tab-btn" data-target="projects">
+                    <span class="pt">Projetos</span><span class="en">Projects</span>
+                </button>
+                <button class="tab-btn" data-target="contents">
+                    <span class="pt">Conteúdos</span><span class="en">Contents</span>
+                </button>
+            </div>
+            <div class="nav-right" style="display: flex; align-items: center; gap: 1.5rem;">
+                <div class="lang-toggle">
+                    <button class="lang-btn" data-lang="pt">PT</button>
+                    <span class="separator">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/GiovaneCarvalho" target="_blank" rel="noopener noreferrer"><i
+                            data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/giovane-carvalho/" target="_blank" rel="noopener noreferrer"><i
+                            data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Home / Profile View -->
+        <section id="home" class="view active">
+            <header class="hero">
+                <div class="hero-content">
+                    <img src="images/MyPhoto.png" alt="Giovane Carvalho" class="profile-pic">
+                    <div class="hero-text">
+                        <div class="badge">
+                            <span class="pt">Vamos conversar</span><span class="en">Let's talk</span>
+                        </div>
+                        <h1 class="hero-title">Giovane Carvalho.</h1>
+                        <h2 class="hero-subtitle pt">
+                            Transformando informações complexas em decisões estratégicas e impacto real como <span
+                                class="highlight">Senior Data Scientist</span> no Nubank.
+                        </h2>
+                        <h2 class="hero-subtitle en">
+                            Transforming complex information into strategic decisions and real-world impact as a <span
+                                class="highlight">Senior Data Scientist</span> at Nubank.
+                        </h2>
+                        <div class="hero-actions">
+                            <a href="https://www.linkedin.com/in/giovane-carvalho/" class="btn btn-primary"
+                                target="_blank">
+                                <span class="pt">Conectar no LinkedIn</span><span class="en">Connect on LinkedIn</span>
+                            </a>
+                            <button class="btn btn-secondary"
+                                onclick="document.querySelector('[data-target=\'projects\']').click()">
+                                <span class="pt">Ver Projetos</span><span class="en">View Projects</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="experience-section">
+                <h3 class="section-title">
+                    <span class="pt">Experiência</span><span class="en">Experience</span>
+                </h3>
+                <div class="timeline">
+                    <!-- Nubank -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div class="company-title">
+                                    <img src="images/Nubank.png" alt="Nubank" class="company-logo">
+                                    <h4>Senior Data Scientist</h4>
+                                </div>
+                                <span class="badge yellow-badge">
+                                    <span class="pt">Atual</span><span class="en">Current</span>
+                                </span>
+                            </div>
+                            <p class="company">Nubank</p>
+                            <div class="description pt">
+                                <ul>
+                                    <li>Liderança técnica em <strong>Marketing Science</strong>, colaborando no
+                                        desenvolvimento e aplicação de metodologias avançadas como <strong>MMM
+                                            (Marketing Mix Modeling)</strong>, Geo-Tests e Causal Impact.</li>
+                                    <li>Desenvolvimento de modelos de propensão para campanhas de re-marketing,
+                                        otimizando a segmentação do público.</li>
+                                    <li>Otimização de algoritmos de Séries Temporais Interrompidas utilizando Scala e
+                                        SQL no <strong>Databricks</strong>, reduzindo falsos positivos e acelerando a
+                                        velocidade de experimentação.</li>
+                                </ul>
+                            </div>
+                            <div class="description en">
+                                <ul>
+                                    <li>Technical leadership in <strong>Marketing Science</strong>, collaborating in the
+                                        development of advanced methodologies such as <strong>MMM (Marketing Mix
+                                            Modeling)</strong>, Geo-Tests, and Causal Impact.</li>
+                                    <li>Development of propensity models for re-marketing campaigns, optimizing audience
+                                        segmentation.</li>
+                                    <li>Optimization of Interrupted Time Series algorithms utilizing Scala and SQL on
+                                        <strong>Databricks</strong>, reducing false positives and accelerating
+                                        experimentation speed.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preditiva Analytics -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div class="company-title">
+                                    <img src="images/Preditiva.png" alt="Preditiva" class="company-logo">
+                                    <h4>Professor de Data Science</h4>
+                                </div>
+                                <span class="badge yellow-badge">
+                                    <span class="pt">Atual</span><span class="en">Current</span>
+                                </span>
+                            </div>
+                            <p class="company">Preditiva Analytics</p>
+                            <div class="description pt">
+                                <ul>
+                                    <li>Gestão de comunidade e resolução de dúvidas técnicas avançadas dos alunos.</li>
+                                    <li>Condução de mentorias síncronas.</li>
+                                    <li>Gravação e produção de conteúdo educacional completo, incluindo aulas e
+                                        exercícios abrangendo <strong>SQL, Python, Análise de Dados e Machine
+                                            Learning</strong>.</li>
+                                </ul>
+                            </div>
+                            <div class="description en">
+                                <ul>
+                                    <li>Community management and resolution of advanced technical doubts from students
+                                        across the platform.</li>
+                                    <li>Conducting synchronous mentoring sessions.</li>
+                                    <li>Recording and producing comprehensive educational content, including classes and
+                                        exercises covering <strong>SQL, Python, Data Analytics, and Machine
+                                            Learning</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bosch Brasil -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div class="company-title">
+                                    <img src="images/BOSCH.png" alt="Bosch" class="company-logo">
+                                    <h4>Senior Data Scientist</h4>
+                                </div>
+                            </div>
+                            <p class="company">Bosch Brasil</p>
+                            <div class="description pt">
+                                <ul>
+                                    <li>Desenvolveu o <strong>PrognostiQ</strong>, um modelo de IA que prevê problemas
+                                        de qualidade em fornecedores, melhorando a sensibilidade em 30% e vencendo o
+                                        <strong>Prêmio Automotive Business 2024</strong>.
+                                    </li>
+                                    <li>Construiu o <strong>Text2SQL</strong>, um Agente de IA utilizando arquiteturas
+                                        RAG e LLMs para permitir que Analistas de Compras executem consultas SQL
+                                        complexas sobre dados de fornecedores via linguagem natural.</li>
+                                    <li>Produziu o <strong>PVI (PUR Volume Inspector)</strong>, fornecendo previsões
+                                        abrangentes de volume de materiais para a equipe de compras, comparando o
+                                        consumo histórico com negociações fechadas.</li>
+                                </ul>
+                            </div>
+                            <div class="description en">
+                                <ul>
+                                    <li>Developed <strong>PrognostiQ</strong>, an AI model predicting quality issues in
+                                        suppliers, which improved sensitivity by 30% and won the <strong>Automotive
+                                            Business Award 2024</strong>.</li>
+                                    <li>Built <strong>Text2SQL</strong>, an AI Agent utilizing RAG architectures and
+                                        LLMs to allow Procurement Analysts to execute complex SQL queries over supplier
+                                        data via natural language.</li>
+                                    <li>Produced the <strong>PVI (PUR Volume Inspector)</strong>, delivering
+                                        comprehensive material volume forecasts to the procurement team comparing
+                                        historical consumption against closed negotiations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messer Gases Brasil -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div class="company-title">
+                                    <img src="images/Messer.png" alt="Messer" class="company-logo">
+                                    <h4>Especialista em Data Science & Analytics</h4>
+                                </div>
+                            </div>
+                            <p class="company">Messer Gases Brasil</p>
+                            <div class="description pt">
+                                <ul>
+                                    <li>Liderou o Centro de Excelência em Dados (COE) e desenvolveu a política de
+                                        Governança de Dados da empresa.</li>
+                                    <li>Implementou múltiplas soluções de ML: um modelo de Clusterização de Clientes, um
+                                        sistema de recomendação de Cross-Sell gerando imenso ROI, e Previsão de entregas
+                                        automatizada (+78% de precisão).</li>
+                                    <li>Criou modelos de detecção de anomalias, reportando mais de 150 TBRL em redução
+                                        de perdas.</li>
+                                    <li>Venceu três <strong>Embrace Awards Brazil</strong> distintos nas categorias de
+                                        Eficiência, Crescimento e Segurança.</li>
+                                </ul>
+                            </div>
+                            <div class="description en">
+                                <ul>
+                                    <li>Spearheaded the Data Center of Excellence (COE) and developed the company's Data
+                                        Governance policy based on DAMABOOK principles.</li>
+                                    <li>Implemented Multiple ML Solutions: A Customer Clustering model optimizing
+                                        logistics, a Cross-Sell recommendation system generating immense pipeline ROI,
+                                        and automated delivery Forecasting (+78% accuracy).</li>
+                                    <li>Created anomaly detection models for abnormal operations, reporting over 150
+                                        TBRL in loss reduction.</li>
+                                    <li>Won three separate <strong>Embrace Awards Brazil</strong> across Efficiency,
+                                        Growth, and Safety categories.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UNICAMP -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <div class="company-title">
+                                    <img src="images/Unicamp.png" alt="Unicamp" class="company-logo">
+                                    <h4>
+                                        <span class="pt">Formação & Acadêmica</span><span class="en">Education</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="company">UNICAMP</p>
+                            <div class="description pt">
+                                <ul>
+                                    <li><strong>Bacharelado</strong> em Engenharia Química (2016-2021).</li>
+                                    <li><strong>Especialização</strong> em Mineração de Dados Complexos e Aluno Especial
+                                        em <strong>Aprendizado de Máquina e Reconhecimento de Padrões</strong>.</li>
+                                    <li>Conduziu avançada <strong>Iniciação Científica (bolsa FAPESP)</strong>
+                                        desenvolvendo código para cálculos de propriedades via simulações moleculares.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="description en">
+                                <ul>
+                                    <li><strong>Bachelor's Degree</strong> in Chemical Engineering (2016-2021).</li>
+                                    <li><strong>Specialization</strong> in Complex Data Mining and Special Student
+                                        standing in <strong>Machine Learning & Pattern Recognition</strong>.</li>
+                                    <li>Conducted advanced <strong>Scientific Research (FAPESP funded)</strong>
+                                        developing code to calculate properties via molecular simulations of
+                                        Lennard-Jones fluids.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Projects View -->
+        <section id="projects" class="view">
+            <div class="projects-header">
+                <h3 class="section-title">
+                    <span class="pt">Projetos em Destaque</span><span class="en">Featured Projects</span>
+                </h3>
+                <p class="section-description">
+                    <span class="pt">Uma coleção de algoritmos, modelos e ferramentas construídas com
+                        paixão.</span><span class="en">A collection of algorithms, models, and analytical tools built
+                        with passion.</span>
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <a href="https://github.com/GiovaneCarvalho/ai-assistent-preditiva" class="project-card card"
+                    target="_blank">
+                    <div class="project-top">
+                        <i data-lucide="bot" class="project-icon"></i>
+                        <i data-lucide="arrow-up-right" class="external-icon"></i>
+                    </div>
+                    <h4>AI Assistant - InduTech</h4>
+                    <p>
+                        <span class="pt">Desenvolvimento e implantação de um assistente virtual inteligente baseado em
+                            IA para responder dúvidas e otimizar processos na InduTech.</span><span
+                            class="en">Development and deployment of an intelligent AI-based virtual assistant to answer
+                            queries and optimize processes at InduTech.</span>
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">GenAI</span>
+                        <span class="tech-tag">LLMs</span>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="https://github.com/GiovaneCarvalho/Classificacao_Comentarios_Lojas_Americanas"
+                    class="project-card card" target="_blank">
+                    <div class="project-top">
+                        <i data-lucide="message-square" class="project-icon"></i>
+                        <i data-lucide="arrow-up-right" class="external-icon"></i>
+                    </div>
+                    <h4>B2W Review Classification</h4>
+                    <p>
+                        <span class="pt">Modelagem de Machine Learning e NLP para classificação de sentimento em
+                            comentários reais de produtos comprados nas Lojas Americanas (B2W).</span><span
+                            class="en">Machine Learning and NLP modeling for sentiment classification on real product
+                            reviews from Lojas Americanas (B2W).</span>
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://github.com/GiovaneCarvalho/Forecast_Consumo_Energia_Dinamarques"
+                    class="project-card card" target="_blank">
+                    <div class="project-top">
+                        <i data-lucide="zap" class="project-icon"></i>
+                        <i data-lucide="arrow-up-right" class="external-icon"></i>
+                    </div>
+                    <h4>Danish Energy Forecasting</h4>
+                    <p>
+                        <span class="pt">Previsão do consumo diário de energia industrial em Copenhagen. Aplicou-se
+                            modelagem estatística (SARIMA) e Machine Learning (XGBoost), reduzindo o erro (MAPE) em
+                            50%.</span><span class="en">Daily forecast of industrial energy consumption in Copenhagen.
+                            Applied statistical modeling (SARIMA) and Machine Learning (XGBoost), reducing error (MAPE)
+                            by 50%.</span>
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">ARIMA</span>
+                    </div>
+                </a>
+
+                <!-- Project 4 -->
+                <a href="https://github.com/GiovaneCarvalho/End-to-End-Solution" class="project-card card"
+                    target="_blank">
+                    <div class="project-top">
+                        <i data-lucide="database" class="project-icon"></i>
+                        <i data-lucide="arrow-up-right" class="external-icon"></i>
+                    </div>
+                    <h4>End-to-End Data Solution</h4>
+                    <p>
+                        <span class="pt">Solução completa englobando Engenharia e Ciência de Dados: Web scraping,
+                            modelagem em PostgreSQL (DBT), sistema de recomendação de livros e deploy via Power
+                            BI.</span><span class="en">Complete solution encompassing Data Engineering & Science: Web
+                            scraping, PostgreSQL modeling (DBT), a book recommendation system, and a Power BI dashboard
+                            deploy.</span>
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Data Engineering</span>
+                        <span class="tech-tag">DBT</span>
+                        <span class="tech-tag">Power BI</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contents View -->
+        <section id="contents" class="view">
+            <div class="projects-header">
+                <h3 class="section-title">
+                    <span class="pt">Conteúdos & Lives</span><span class="en">Contents & Live Streams</span>
+                </h3>
+                <p class="section-description">
+                    <span class="pt">Uma seleção de aulas e apresentações ao vivo que realizei cobrindo Ciência de
+                        Dados e IA.</span><span class="en">A selection of live classes and presentations I've given
+                        covering Data Science and AI.</span>
+                </p>
+            </div>
+
+            <div class="contents-grid">
+                <!-- Video 1 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=3o01lIRjcgY&t=4334s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/3o01lIRjcgY/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">Previsão de vendas para E-commerce</span><span class="en">Sales Forecasting
+                            for E-commerce</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Aprenda na prática a criar análises que geram valor, em um workshop feito
+                            para quem quer iniciar na área de dados do jeito certo.</span><span class="en">Learn in
+                            practice how to create value-generating analyses in a workshop designed for those
+                            starting in the data field the right way.</span>
+                    </p>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=dJ2qJ6RS_GQ&t=2884s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/dJ2qJ6RS_GQ/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">O que faz um Data Scientist no dia a dia</span><span class="en">What a Data
+                            Scientist Does Day-to-Day</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Descubra como gerar de fato valor com dados e Inteligência Artificial nas
+                            empresas, analisando o trabalho real de um Cientista de Dados.</span><span
+                            class="en">Discover how to genuinely generate value with data and Artificial
+                            Intelligence in companies, analyzing the real work of a Data Scientist.</span>
+                    </p>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=DcyyETj1Adk&t=2637s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/DcyyETj1Adk/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">Uma Introdução a Séries Temporais</span><span class="en">An Introduction to
+                            Time Series</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Mergulhe fundo nos conceitos de modelagem de séries temporais para realizar
+                            previsões de demanda robustas no mercado financeiro.</span><span class="en">Dive deep
+                            into time series modeling concepts to perform robust demand forecasting in the financial
+                            market.</span>
+                    </p>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=3P2hLdvP4ZA&t=2507s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/3P2hLdvP4ZA/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">Eleve sua Carreira com Dados e IA</span><span class="en">Elevate Your
+                            Career with Data and AI</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Estratégias vitais e dicas práticas focadas em elevar seu papel
+                            profissional como Especialista de Dados e Inteligência Artificial.</span><span
+                            class="en">Vital strategies and practical tips focused on elevating your professional
+                            role as a Data and Artificial Intelligence Specialist.</span>
+                    </p>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=TgRSxgtOp64&t=4376s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/TgRSxgtOp64/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">Correlação vs. Causalidade</span><span class="en">Correlation vs.
+                            Causation</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Entenda definitivamente a diferença técnica e interpretativa entre
+                            correlação pareada e os impactos profundos da causalidade.</span><span class="en">Understand
+                            definitively the technical and interpretative difference between
+                            paired correlation and the profound impacts of causality.</span>
+                    </p>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=jiulEwT3b1U&t=3814s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/jiulEwT3b1U/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">Tabelas Dinâmicas e de Frequência</span><span class="en">Pivot and
+                            Frequency Tables</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Aprenda a realizar análises exploratórias ricas e criar tabelas de
+                            frequência altamente descritivas usando as abordagens corretas.</span><span class="en">Learn
+                            to conduct rich exploratory analyses and create highly descriptive
+                            frequency tables using the correct approaches.</span>
+                    </p>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="card content-card">
+                    <a href="https://www.youtube.com/watch?v=JGOc-JAHPm4&t=3181s" target="_blank"
+                        class="video-thumbnail-wrapper">
+                        <img src="https://img.youtube.com/vi/JGOc-JAHPm4/maxresdefault.jpg" alt="Video Thumbnail"
+                            class="video-thumbnail">
+                        <div class="play-overlay">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                    </a>
+                    <h4>
+                        <span class="pt">MLOps na Prática</span><span class="en">MLOps in Practice</span>
+                    </h4>
+                    <p>
+                        <span class="pt">Explore todas as etapas que transformam um modelo isolado de algoritmo de
+                            Machine Learning em uma arquitetura funcional com real entrega de valor
+                            (MLOps).</span><span class="en">Explore all the steps that transform an isolated Machine
+                            Learning algorithm model into a functional architecture with real value delivery
+                            (MLOps).</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <span class="pt">© 2026 Giovane Carvalho. Feito com paixão.</span><span class="en">© 2026 Giovane Carvalho.
+                Built with passion.</span>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
